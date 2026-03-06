@@ -20,9 +20,10 @@ module tt_um_alu4bit (
  // assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
   assign uio_out = 0;//we are not using this as output
   assign uio_oe  = 0;
-
+    assign uo_out[7:4] = 0;
   // List all unused inputs to prevent warnings
     wire _unused = &{ena, uio_in[2],uio_in[3],uio_in[4],uio_in[5],uio_in[6],uio_in[7], 1'b0};
+    
     //alu logic
     reg[3:0] result;
     wire [3:0] a,b;
